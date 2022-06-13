@@ -1,0 +1,29 @@
+@use "../abstracts/index" as *;
+
+.container {
+    width: Min(90%, pxToRem(1114));
+    margin-inline: auto;
+}
+
+
+/* spacing */
+
+.mt-96-phone {
+    @include for-phone-only {
+        margin-top: pxToRem(96) !important;
+    }
+}
+
+.mt-170-phone {
+    @include for-phone-only {
+        margin-top: pxToRem(170) !important;
+    }
+}
+
+.mt-160 {
+    margin-top: pxToRem(160);
+}
+
+.mt-184 {
+    margin-top: pxToRem(184);
+}

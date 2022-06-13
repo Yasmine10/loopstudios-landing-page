@@ -1,0 +1,31 @@
+/* Colors */
+
+$clr-primary-white: hsl(0, 0%, 100%);
+$clr-primary-black: hsl(0, 0%, 0%);
+$clr-primary-dark-grey: hsl(0, 0%, 55%);
+$clr-primary-very-dark-grey: hsl(0, 0%, 41%);
+
+
+/* Typography */
+
+$font-families: (
+    'primary': #{'Alata', sans-serif},
+    'secondary': #{'Josefin Sans', sans-serif},
+);
+
+$font-sizes: (
+    'h1': 4.5rem,               // 72px
+    'h1-mobile': 2.5rem,        // 40px
+    'h2': 3rem,                 // 48px
+    'h2-mobile': 2rem,          // 32px
+    'h3': 2rem,                 // 32px
+    'h3-mobile': 1.5rem,        // 24px
+    'body': 0.9375rem,          // 15px
+    'nav': 0.9375rem,           // 15px
+    'nav-mobile': 1.5rem,       // 24px
+);
+
+$font-weights: (
+    'light': 300,
+    'regular': 400,
+);

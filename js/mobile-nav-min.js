@@ -1,0 +1,1 @@
+let toggle=document.getElementById("nav-toggle");toggle.addEventListener("click",(function(){let e=document.getElementsByTagName("BODY")[0],t=document.getElementById("header-nav");t.classList.contains("on")?(e.classList.remove("no-scroll"),t.classList.remove("on"),toggle.classList.remove("on")):(e.classList.add("no-scroll"),t.classList.add("on"),toggle.classList.add("on"))}));

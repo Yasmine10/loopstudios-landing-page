@@ -1,0 +1,22 @@
+/* media queries for responsiveness */
+/*
+ *  mobile: 375px
+ *  desktop: 1440px
+ *
+ */
+
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: 800px) { @content; }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}

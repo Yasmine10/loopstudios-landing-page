@@ -1,0 +1,18 @@
+/* Convert pixels to REM,EM */
+
+@use "sass:math";
+
+@function pxToRem($value) {
+    @return math.div($value * 1px, 16px) * 1rem;
+}
+
+@function pxToEm($value) {
+    $emValue: math.div($value * 1px, 16px) * 1em;
+    @return $emValue;
+}
+
+/* hsla color */
+
+@function hslToHsla($color, $alpha) {
+    @return hsla(hue($color), saturation($color), lightness($color), $alpha);
+}

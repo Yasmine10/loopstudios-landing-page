@@ -1,0 +1,123 @@
+@use "../abstracts/index" as *;
+
+footer {
+    background-color: $clr-primary-black;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-block: pxToRem(56);
+
+    color: $clr-primary-white;
+
+    @include for-tablet-landscape-up {
+        text-align: initial;
+    }
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include for-tablet-landscape-up {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
+    }
+
+    .footer-logo {
+        width: fit-content;
+        margin-bottom: pxToRem(32);
+
+        @include for-tablet-landscape-up {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+
+            margin-bottom: pxToRem(14);
+        }
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        gap: pxToRem(16);
+
+        margin-bottom: pxToRem(48);
+
+        @include for-tablet-landscape-up {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+
+            flex-direction: row;
+
+            margin-bottom: 0;
+        }
+
+        &__item {
+            position: relative;
+
+            &:hover,
+            &:focus {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    bottom: pxToRem(-8);
+                    left: 50%;
+                    transform: translateX(-50%);
+                    
+                    width: 24px;
+                    height: 2px;
+                    background-color: $clr-primary-white;
+                }
+            }            
+        }
+
+        &__link {
+            text-decoration: none;
+            color: $clr-primary-white;
+        }
+    }
+
+    .footer-social-links {
+        display: flex;
+        align-items: center;
+        gap: pxToRem(16);
+
+        margin-bottom: pxToRem(16);
+
+        @include for-tablet-landscape-up {
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+            justify-self: flex-end;
+        }
+
+        &__item {
+            padding-bottom: pxToRem(8);
+            border-bottom: 2px solid transparent;
+
+            &:hover,
+            &:focus {
+                border-color: $clr-primary-white;
+            }
+        }
+
+        &__nav-link {
+            color: $clr-primary-white;
+        }
+    }
+
+    .footer-copyright p {
+        mix-blend-mode: normal;
+        opacity: 0.5;
+
+        @include for-tablet-landscape-up {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+            justify-self: flex-end;
+            text-align: end;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+@use "../abstracts/index" as *;
+
+body {
+    font-family: map-get($font-families, 'primary');
+    font-weight: map-get($font-weights, 'regular');
+    line-height: 25px;
+
+    color: $clr-primary-black;
+}
+
+.h1, 
+.h2, 
+.h3 {
+    font-family: map-get($font-families, 'secondary');
+    font-weight: map-get($font-weights, 'light');
+    text-transform: uppercase;
+}
+
+.h1 {
+    font-size: map-get($font-families, 'h1-mobile');
+    line-height: 38px;
+
+    color: $clr-primary-white;
+
+    @include for-tablet-portrait-up {
+        font-size: map-get($font-sizes, 'h1');
+        line-height: 70px;
+    }
+}
+
+.h2 {
+    font-size: map-get($font-sizes, 'h2');
+    line-height: map-get($font-sizes, 'h2');
+
+    color: $clr-primary-black;
+
+    @include for-phone-only {
+        font-size: map-get($font-sizes, 'h2-mobile');
+        line-height: map-get($font-sizes, 'h2-mobile');
+    }
+}
+
+.h3 {
+    font-size: map-get($font-sizes, 'h3');
+    line-height: map-get($font-sizes, 'h3');
+
+    color: $clr-primary-white;
+
+    @include for-phone-only {
+        font-size: map-get($font-sizes, 'h3-mobile');
+        line-height: map-get($font-sizes, 'h3-mobile');
+    }
+}

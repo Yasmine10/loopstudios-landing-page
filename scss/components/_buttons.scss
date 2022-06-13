@@ -1,0 +1,31 @@
+@use "../abstracts/index" as *;
+
+.btn {
+    display: inline-block;
+
+    background-color: transparent;
+    width: fit-content;
+    padding: pxToRem(13) pxToRem(40);
+
+    font-size: map-get($font-sizes, 'btn');
+    line-height: map-get($font-sizes, 'btn');
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+    text-decoration: none;
+
+    transition: all 250ms ease-in-out;
+
+    cursor: pointer;
+}
+
+.btn--primary {
+    border: 1px solid $clr-primary-black;
+    color: $clr-primary-black;
+
+    &:hover,
+    &:focus {
+        background-color: $clr-primary-black;
+        color: $clr-primary-white;
+    }
+}

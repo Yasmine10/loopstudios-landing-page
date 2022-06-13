@@ -1,0 +1,44 @@
+@use "../abstracts/index" as *;
+
+header {
+    background-color: $clr-primary-dark-grey;
+    background-image: url('../../images/desktop/image-hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    height: pxToRem(650);
+
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background-color: hslToHsla($clr-primary-black, 0.4);
+    }
+
+    nav,
+    .home__hero {
+        position: relative;
+    }
+
+    .home__hero {
+        border: 1px solid $clr-primary-white;
+        max-width: pxToRem(650);
+        margin-top: pxToRem(163);
+        
+        .hero__title {
+            padding: pxToRem(24);
+        }
+
+        @include for-tablet-landscape-up {
+            margin-top: pxToRem(123);
+
+            .hero__title {
+                padding: pxToRem(40);
+            }
+        }
+    }
+}

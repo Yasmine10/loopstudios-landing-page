@@ -1,0 +1,130 @@
+@use "../abstracts/index" as *;
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    padding-top: pxToRem(40);
+
+    @include for-tablet-portrait-up {
+        padding-top: pxToRem(64);
+        flex-wrap: nowrap;
+    }
+
+    .logo {
+        flex-basis: 50%;
+        position: relative;
+        z-index: 110;
+    }
+
+    .nav-toggle {
+        flex-basis: 50%;
+
+        background-image: url('../../images/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        background-position: 100%;
+        background-size: contain;
+
+        width: pxToRem(24);
+        height: pxToRem(16);
+
+        position: relative;
+        z-index: 110;
+
+        cursor: pointer;
+
+        transition: background-image 250ms ease-in-out;
+
+        @include for-tablet-landscape-up {
+            display: none;
+        }
+
+        &.on {
+            background-image: url('../../images/icon-close.svg'); 
+        }
+    }
+
+    .nav-list {
+        display: none;
+
+        transition: background-color 350ms ease-in-out;
+
+        &.on {
+            display: flex;
+            flex-direction: column;
+            gap: pxToRem(24);
+
+            background-color: $clr-primary-black;
+            padding-top: 200px;
+            padding-left: 10%;
+            width: 110vw;
+            height: 100vh;
+            
+            position: absolute;
+            inset: 0;
+            top: 0;
+            left: -10%;
+            z-index: 100;
+            
+            overflow: visible;
+            overflow-y: scroll;
+
+            transition: all 500ms ease-in-out;
+
+            .nav-item {
+                width: fit-content;
+                padding-bottom: pxToRem(8);
+
+                border-bottom: 2px solid transparent;
+
+                &:hover,
+                &:focus {
+                    border-color: $clr-primary-white;
+
+                    &::before {
+                        content: "";
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            .nav-link {
+                font-family: map-get($font-families, 'secondary');
+                font-size: map-get($font-sizes, 'nav-mobile');
+                text-transform: uppercase;
+            }
+        }
+
+        @include for-tablet-landscape-up {
+            display: flex;
+            gap: pxToRem(32);
+        }
+    }
+
+    .nav-item {
+        position: relative;
+        padding-bottom: pxToRem(8);
+
+        &:hover,
+        &:focus {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+
+                background-color: $clr-primary-white;
+                width: pxToRem(24);
+                height: pxToRem(2);
+            }
+        }
+    }
+
+    .nav-link {
+        text-decoration: none;
+        color: $clr-primary-white;
+    }
+}

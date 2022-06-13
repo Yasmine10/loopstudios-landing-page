@@ -359,7 +359,7 @@ nav .nav-link {
 
 header {
   background-color: hsl(0deg, 0%, 55%);
-  background-image: url("../images/desktop/image-hero.jpg");
+  background-image: url("/loopstudios-landing-page/images/desktop/image-hero.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
